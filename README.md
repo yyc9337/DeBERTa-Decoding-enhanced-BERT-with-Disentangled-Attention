@@ -13,8 +13,7 @@ Masked language model -  전체 시퀀스의 15% 마스킹하고 이를 복원�
 내용(content)와 Position Embedding을 분리해서 접근합니다.
 
 
-
-
+<img src="img/figure1.png">
 
 Content Embedding = H , Relative Position Embedding = P 
 
