@@ -23,10 +23,10 @@ Content Embedding = H , Relative Position Embedding = P
                                                      <Disentangeld Attention>
 
 
-3.2 ENHANCED MASK DECODER ACCOUNTS FOR ABSOLUTE WORD POSITIONS
+### 3.2 ENHANCED MASK DECODER ACCOUNTS FOR ABSOLUTE WORD POSITIONS
 
  DeBERTa는 상대적 위치 정보를 보완하기 위해 절대적인 위치를 고려했다. ‘쇼핑몰’(원래는 ‘mall’ 이라는 의미보다 ‘store’의 의미가 큰 것 처럼) 구문적 뉘앙스는 단어의 절대적인 위치에 크게 의존한다. DeBERTa에서는 모든 Transformer 계층 바로 뒤에 있지만 마스크된 토큰 예측을 위한 softmax 계층 바로 앞에 통합한다. 이러한 방식으로, DeBERTa는 모든 트랜스포머 레이어에서 상대 위치 정보를 보완하고 마스크된 단어를 디코딩할 때 보완 정보로 절대 위치만 사용한다. 
  DeBERTa의 디코딩 구성 요소를 강화 마스크 디코더(EMD)라고 부른다. 마지막으로 BERT가 사용하는 절대 위치의 통합 모델이 상대 위치의 충분한 정보를 학습하는 것을 방해할 수 있다고 추측하고 EMD를 사용하면 사전 교육을 위해 position이외에도 다른 유용한 정보를 얻을 수 있을 것이라 생각한다.
 
-4. SCALE INVARIANT FINE-TUNING
+## 4. SCALE INVARIANT FINE-TUNING
  이 섹션에서는 fine-tuning을 위해 설명된 알고리즘의 변형인 새로운 가상 대립 훈련 알고리즘 Scale-invariant-Fine-Tuning(SiFT)를 제시한다.
