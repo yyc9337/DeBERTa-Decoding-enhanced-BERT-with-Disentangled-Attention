@@ -10,14 +10,14 @@ Masked language model -  전체 시퀀스의 15% 마스킹하고 이를 복원�
 ## 3. DeBERTa Architecture
 ### 3.1 DISENTANGLED ATTENTION: A TWO-VECTOR APPROACH TO CONTENT AND POSITION EMBEDDING
 
-내용(content)와 Position Embedding을 분리해서 접근합니다.
+내용(content)와 Position Embedding을 분리해서 접근한다.
 
 
 <img src="img/figure2.png">
 
 Content Embedding = H , Relative Position Embedding = P 
 
-위의 식을 계산하여 HH, HP, PH, PP를 구하고  content-to-content, content-to-position, position-to-content, and position-to-position 표현된다. 단어 쌍의 어텐션 가중치가 content뿐만 아니라 상대적인 위치에 따라 달라지기 때문에 position-to-content 또한 중요하다고 말하지만, content-to-position, position-to-content 용어를 모두 사용하여 완전히 모델링한다. 따라서 postion-to-position은 많은 정보를 제공하지 않으므로 제거된다. 위 과정 후에는 QKV(Query, Key, Value)를 사용한 어텐션 연산 방식과 같습니다.
+위의 식을 계산하여 HH, HP, PH, PP를 구하고  content-to-content, content-to-position, position-to-content, and position-to-position 표현된다. 단어 쌍의 어텐션 가중치가 content뿐만 아니라 상대적인 위치에 따라 달라지기 때문에 position-to-content 또한 중요하다고 말하지만, content-to-position, position-to-content 용어를 모두 사용하여 완전히 모델링한다. 따라서 postion-to-position은 많은 정보를 제공하지 않으므로 제거된다. 위 과정 후에는 QKV(Query, Key, Value)를 사용한 어텐션 연산 방식과 같다.
 
 <img src="img/figure3.png">
                                                      <Disentangeld Attention>
